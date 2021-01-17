@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel with children prop 1`] = `
+<div
+  className="Panel"
+>
+  <h1>
+    Testing My Code!
+  </h1>
+</div>
+`;

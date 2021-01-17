@@ -2,8 +2,12 @@
 
 exports[`Home screen 1`] = `
 <div>
-  <h1>
-    Check My Password
-  </h1>
+  <div
+    className="Panel"
+  >
+    <h1>
+      Check My Password
+    </h1>
+  </div>
 </div>
 `;
