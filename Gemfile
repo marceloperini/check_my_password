@@ -11,6 +11,7 @@ gem 'rails', '~> 6.1.1'
 gem 'react_on_rails', '~> 12.0.4'
 gem 'sass-rails', '>= 6'
 gem 'slim', '~> 4.0.1'
+gem 'uglifier'
 gem 'webpacker', '~> 5.0'
 
 group :development, :test do
