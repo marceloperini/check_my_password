@@ -8,6 +8,9 @@ exports[`Home screen 1`] = `
     <h1>
       Check My Password
     </h1>
+    <div
+      className="PasswordForm"
+    />
   </div>
 </div>
 `;
