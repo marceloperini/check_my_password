@@ -14,6 +14,8 @@ gem 'slim', '~> 4.0.1'
 gem 'webpacker', '~> 5.0'
 
 group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
   gem 'guard-rspec'
   gem 'pry-byebug'
   gem 'reek'
@@ -31,8 +33,10 @@ end
 
 group :test do
   gem 'capybara', '>= 3.26'
+  gem 'database_cleaner-active_record'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 4.0'
   gem 'webdrivers'
 end
 
