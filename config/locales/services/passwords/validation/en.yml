@@ -1,9 +1,19 @@
 en:
   services:
-    passwords/validation:
-      blocked: the password are included from our blocklist. Try other.
-      minimal_length: the password should have minimum length of 6 characters.
-      only_downcase: the password should have at least one upper case character.
-      only_upcase: the password should have at least one down case character.
-      only_characters: the password should have at least one number.
-      no_special_characters: the password should have at least one special characters.
+    passwords/special_character:
+      error: the password should have at least one special characters.
+
+    passwords/number:
+      error: the password should have at least one number.
+
+    passwords/upcase:
+      error: the password should have at least one down case character.
+
+    passwords/downcase:
+      error: the password should have at least one upper case character.
+
+    passwords/minimum_length:
+      error: the password should have minimum length of 6 characters.
+
+    passwords/blocked:
+      error: the password are included from our blocklist. Try other.

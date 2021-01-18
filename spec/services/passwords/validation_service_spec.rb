@@ -17,7 +17,7 @@ RSpec.describe Passwords::ValidationService do
         service.call
 
         expect(service.errors).to include(
-          I18n.t!('services.passwords/validation.blocked')
+          I18n.t!('services.passwords/blocked.error')
         )
       end
     end
@@ -31,7 +31,7 @@ RSpec.describe Passwords::ValidationService do
         service.call
 
         expect(service.errors).to include(
-          I18n.t!('services.passwords/validation.minimal_length')
+          I18n.t!('services.passwords/minimum_length.error')
         )
       end
     end
@@ -45,7 +45,7 @@ RSpec.describe Passwords::ValidationService do
         service.call
 
         expect(service.errors).to include(
-          I18n.t!('services.passwords/validation.only_downcase')
+          I18n.t!('services.passwords/downcase.error')
         )
       end
     end
@@ -59,7 +59,7 @@ RSpec.describe Passwords::ValidationService do
         service.call
 
         expect(service.errors).to include(
-          I18n.t!('services.passwords/validation.only_upcase')
+          I18n.t!('services.passwords/upcase.error')
         )
       end
     end
@@ -73,7 +73,7 @@ RSpec.describe Passwords::ValidationService do
         service.call
 
         expect(service.errors).to include(
-          I18n.t!('services.passwords/validation.only_characters')
+          I18n.t!('services.passwords/number.error')
         )
       end
     end
@@ -87,16 +87,13 @@ RSpec.describe Passwords::ValidationService do
         service.call
 
         expect(service.errors).to include(
-          I18n.t!('services.passwords/validation.no_special_characters')
+          I18n.t!('services.passwords/special_character.error')
         )
       end
     end
 
-    context 'when the password have sequences' do
-    end
-
     context 'when the password are valid' do
-      let(:password) { Faker::Internet.password(special_characters: true) }
+      let(:password) { '486yCTt^XCSDbz' }
 
       it { expect(service.call).to be_truthy }
 

@@ -18,41 +18,25 @@ module Passwords
       errors.empty?
     end
 
-    private
+    protected
 
     attr_reader :password
 
+    VALIDATORS = [
+      BlockedValidator,
+      MinimumLengthValidator,
+      DowncaseValidator,
+      UpcaseValidator,
+      NumberValidator,
+      SpecialCharacterValidator
+    ].freeze
+
     def run_validations!
-      errors << t('.blocked') if password_blocked?
-      errors << t('.minimal_length') if less_than_six_length?
-      errors << t('.only_downcase') if only_downcase?
-      errors << t('.only_upcase') if only_upcase?
-      errors << t('.only_characters') if only_characters?
-      errors << t('.no_special_characters') if no_special_characters?
-    end
+      VALIDATORS.each do |validator_class|
+        validator = validator_class.new(password)
 
-    def less_than_six_length?
-      password.size < 6
-    end
-
-    def only_downcase?
-      password.gsub(/([A-Z])/, '') == password
-    end
-
-    def only_upcase?
-      password.gsub(/([a-z])/, '') == password
-    end
-
-    def only_characters?
-      password.gsub(/\d/, '') == password
-    end
-
-    def no_special_characters?
-      password.gsub(/(\d|[a-zA-Z])/, '').empty?
-    end
-
-    def password_blocked?
-      PasswordBlock.where(password: password).any?
+        errors << validator.error unless validator.valid?
+      end
     end
   end
 end
