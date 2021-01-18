@@ -20,6 +20,8 @@ RSpec.describe '/passwords/validations endpoints', type: :request do
       let(:password) { '123456' }
 
       it { expect(response).to have_http_status(:unprocessable_entity) }
+
+      it { expect(JSON.parse(response.body)['errors']).not_to be_empty }
     end
   end
 end
