@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe PasswordValidationService do
+RSpec.describe Passwords::ValidationService do
   subject(:service) { described_class.new(password) }
 
   describe '#call' do
@@ -17,7 +17,7 @@ RSpec.describe PasswordValidationService do
         service.call
 
         expect(service.errors).to include(
-          I18n.t!('services.password_validation.blocked')
+          I18n.t!('services.passwords/validation.blocked')
         )
       end
     end
@@ -31,7 +31,7 @@ RSpec.describe PasswordValidationService do
         service.call
 
         expect(service.errors).to include(
-          I18n.t!('services.password_validation.minimal_length')
+          I18n.t!('services.passwords/validation.minimal_length')
         )
       end
     end
@@ -45,7 +45,7 @@ RSpec.describe PasswordValidationService do
         service.call
 
         expect(service.errors).to include(
-          I18n.t!('services.password_validation.only_downcase')
+          I18n.t!('services.passwords/validation.only_downcase')
         )
       end
     end
@@ -59,7 +59,7 @@ RSpec.describe PasswordValidationService do
         service.call
 
         expect(service.errors).to include(
-          I18n.t!('services.password_validation.only_upcase')
+          I18n.t!('services.passwords/validation.only_upcase')
         )
       end
     end
@@ -73,7 +73,7 @@ RSpec.describe PasswordValidationService do
         service.call
 
         expect(service.errors).to include(
-          I18n.t!('services.password_validation.only_characters')
+          I18n.t!('services.passwords/validation.only_characters')
         )
       end
     end
@@ -87,7 +87,7 @@ RSpec.describe PasswordValidationService do
         service.call
 
         expect(service.errors).to include(
-          I18n.t!('services.password_validation.no_special_characters')
+          I18n.t!('services.passwords/validation.no_special_characters')
         )
       end
     end
@@ -98,7 +98,7 @@ RSpec.describe PasswordValidationService do
     context 'when the password are valid' do
       let(:password) { Faker::Internet.password(special_characters: true) }
 
-      fit { expect(service.call).to be_truthy }
+      it { expect(service.call).to be_truthy }
 
       it 'is expected that errors messages are empty' do
         service.call

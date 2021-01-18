@@ -1,6 +1,6 @@
 en:
   services:
-    password_validation:
+    passwords/validation:
       blocked: the password are included from our blocklist. Try other.
       minimal_length: the password should have minimum length of 6 characters.
       only_downcase: the password should have at least one upper case character.
