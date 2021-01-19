@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button when children are seted 1`] = `
+<button
+  className="btn btn-primary "
+  onClick={[Function]}
+  type="button"
+>
+  <div />
+</button>
+`;
+
+exports[`Button when className are seted 1`] = `
+<button
+  className="btn btn-primary NewClassName"
+  onClick={[Function]}
+  type="button"
+>
+  <div />
+</button>
+`;
+
+exports[`Button when onClick are seted 1`] = `
+<button
+  className="btn btn-primary "
+  onClick={[Function]}
+  type="button"
+>
+  <div />
+</button>
+`;
+
+exports[`Button when optional props are not seted 1`] = `
+<button
+  className="btn btn-primary "
+  onClick={[Function]}
+  type="button"
+>
+  <div />
+</button>
+`;
