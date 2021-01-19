@@ -4,6 +4,8 @@
 
 import ReactOnRails from 'react-on-rails';
 
+import 'config';
+
 import Home from '../screens/Home';
 
 ReactOnRails.register({
