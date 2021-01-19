@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField when placeholder prop are seted 1`] = `
+<div
+  className="TextField"
+>
+  <input
+    className="form-control"
+    onChange={[Function]}
+    placeholder="Placeholder..."
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`TextField when value and placeholder props are not seted 1`] = `
+<div
+  className="TextField"
+>
+  <input
+    className="form-control"
+    onChange={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`TextField when value prop are seted 1`] = `
+<div
+  className="TextField"
+>
+  <input
+    className="form-control"
+    onChange={[Function]}
+    placeholder=""
+    type="text"
+    value="Value"
+  />
+</div>
+`;

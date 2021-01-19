@@ -1,1 +1,1 @@
-import './interceptors/authenticityToken';
+import './authenticityToken';

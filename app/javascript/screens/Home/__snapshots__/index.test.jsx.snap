@@ -10,7 +10,19 @@ exports[`Home screen 1`] = `
     </h1>
     <div
       className="PasswordForm"
-    />
+    >
+      <div
+        className="TextField"
+      >
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Type the password..."
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
