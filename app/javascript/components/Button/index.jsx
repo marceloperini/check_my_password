@@ -2,13 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const Button = (props) => {
-  const { children, onClick, className, type, color } = props;
+  const { children, onClick, className, type, color, disabled } = props;
 
   return (
     <button
       type={type}
       className={`btn btn-${color} ${className}`}
-      onClick={onClick}>
+      onClick={onClick}
+      disabled={disabled}>
       {children}
     </button>
   );
@@ -17,12 +18,14 @@ const Button = (props) => {
 Button.defaultProps = {
   onClick: () => {},
   className: '',
+  disabled: false,
 };
 
 Button.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func,
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   type: PropTypes.oneOf([
     'button',
     'submit',
@@ -37,6 +40,14 @@ Button.propTypes = {
     'light',
     'dark',
     'link',
+    'outline-primary',
+    'outline-secondary',
+    'outline-success',
+    'outline-danger',
+    'outline-warning',
+    'outline-info',
+    'outline-light',
+    'outline-dark',
   ]).isRequired,
 };
 
