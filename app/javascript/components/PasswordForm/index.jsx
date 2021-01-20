@@ -21,19 +21,21 @@ const PasswordForm = (props) => {
 
   return (
     <div className='PasswordForm'>
-      <TextField
-        value={password}
-        onChange={onChange}
-        placeholder="Type the password..."
-      />
+      <div className='InputContainer'>
+        <TextField
+          value={password}
+          onChange={onChange}
+          placeholder="Type the password..."
+        />
 
-      <Button
-        type="button"
-        color="primary"
-        onClick={onClick}
-      >
-        Check!
-      </Button>
+        <Button
+          type="button"
+          color="primary"
+          onClick={onClick}
+        >
+          Check!
+        </Button>
+      </div>
     </div>
   );
 };
