@@ -1,0 +1,29 @@
+version: '3'
+services:
+  db:
+    image: postgres:9.6-alpine
+    environment:
+      POSTGRES_USER: check_my_password
+      POSTGRES_PASSWORD: check_my_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  webapp:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/check_my_password
+    environment:
+      RAILS_ENV: production
+      DATABASE_HOST: postgres
+      DATABASE_USERNAME: check_my_password
+      DATABASE_PASSWORD: check_my_password
+      SECRET_KEY_BASE: 8cdcc43d0437bcf50158a6a2debac06727de0029ea167b9b0eb10a13830e5704f2c42d53ce418b4b15530cd4931c9fe0a5d5a1fa82ddc4c116121b4118ffe3e4
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    links:
+      - "db:postgres"
+
