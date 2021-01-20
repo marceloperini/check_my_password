@@ -3,6 +3,7 @@
 exports[`Button when children are seted 1`] = `
 <button
   className="btn btn-primary "
+  disabled={false}
   onClick={[Function]}
   type="button"
 >
@@ -13,6 +14,7 @@ exports[`Button when children are seted 1`] = `
 exports[`Button when className are seted 1`] = `
 <button
   className="btn btn-primary NewClassName"
+  disabled={false}
   onClick={[Function]}
   type="button"
 >
@@ -23,6 +25,7 @@ exports[`Button when className are seted 1`] = `
 exports[`Button when onClick are seted 1`] = `
 <button
   className="btn btn-primary "
+  disabled={false}
   onClick={[Function]}
   type="button"
 >
@@ -33,6 +36,7 @@ exports[`Button when onClick are seted 1`] = `
 exports[`Button when optional props are not seted 1`] = `
 <button
   className="btn btn-primary "
+  disabled={false}
   onClick={[Function]}
   type="button"
 >
