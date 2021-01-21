@@ -3,7 +3,7 @@
 module Password
   class NumberValidator < ActiveModel::Validator
     def validate(record)
-      return if record.password.empty?
+      return unless record.password.present?
       return if record.password[/\d/]
 
       record.errors.add :password, :no_numbers

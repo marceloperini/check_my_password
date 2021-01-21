@@ -23,7 +23,7 @@ const PasswordForm = (props) => {
       method: 'post',
       responseType: 'json',
       url: url,
-      data: { password }
+      data: { validation: { password } }
     }).then((response) => {
       setSubmiting(false);
       setGreatPassword(true);
