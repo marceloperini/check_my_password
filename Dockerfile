@@ -6,9 +6,8 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 RUN apt-get update -qq && apt-get install -y libpq-dev nodejs yarn
 RUN gem install bundler:2.2.5
 
-RUN mkdir /check_my_password
-WORKDIR /check_my_password
-COPY . /check_my_password
-RUN cp /check_my_password/config/database.yml.sample /check_my_password/config/database.yml
-RUN bundle install
-RUN yarn install
+WORKDIR /app
+COPY . ./
+RUN cp config/database.yml.sample ./config/database.yml
+RUN bundle check || bundle install
+RUN yarn install --check-files
