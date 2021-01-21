@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe BlockedPasswordValidator do
+RSpec.describe Password::BlockedValidator do
   subject(:validator) { described_class.new }
 
   describe '#validade' do

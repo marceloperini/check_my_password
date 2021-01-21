@@ -5,5 +5,9 @@ class PasswordForm < ApplicationForm
 
   validates :password, presence: true, length: { minimum: 6 }
 
-  validate_with BlockedPasswordValidator
+  validates_with Password::BlockedValidator
+  validates_with Password::UpcaseValidator
+  validates_with Password::DowncaseValidator
+  validates_with Password::NumberValidator
+  validates_with Password::SpecialSymbolValidator
 end
