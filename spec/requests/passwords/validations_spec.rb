@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe '/passwords/validations endpoints', type: :request do
   describe 'POST' do
     subject(:request) do
-      post '/passwords/validations', params: { password: password }
+      post '/passwords/validations', params: { validation: { password: password } }
     end
 
     before { request }
