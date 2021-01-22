@@ -7,5 +7,5 @@ class PasswordForm < ApplicationForm
 
   validates_with Password::BlockedValidator, Password::UpcaseValidator,
                  Password::DowncaseValidator, Password::NumberValidator,
-                 Password::SpecialSymbolValidator
+                 Password::SpecialSymbolValidator, Password::SequencialValidator
 end

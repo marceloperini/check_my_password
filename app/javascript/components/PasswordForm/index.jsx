@@ -59,29 +59,31 @@ const PasswordForm = (props) => {
         )
       }
 
-      <div className="row">
-        <div className="col-md-8 col-sm-12">
-          <div className="form-group">
-            <TextField
-              value={password}
-              onChange={onChange}
-              placeholder='Type the password...'
-            />
+      <form>
+        <div className="row">
+          <div className="col-md-8 col-sm-12">
+            <div className="form-group">
+              <TextField
+                value={password}
+                onChange={onChange}
+                placeholder='Type the password...'
+              />
+            </div>
+          </div>
+
+          <div className="col-md-4 col-sm-12">
+            <Button
+              type="submit"
+              color="outline-primary"
+              onClick={onClick}
+              className='btn-block'
+              disabled={submiting}
+            >
+              { submiting ? 'Checking...' : 'Check!' }
+            </Button>
           </div>
         </div>
-
-        <div className="col-md-4 col-sm-12">
-          <Button
-            type="button"
-            color="outline-primary"
-            onClick={onClick}
-            className='btn-block'
-            disabled={submiting}
-          >
-            { submiting ? 'Checking...' : 'Check!' }
-          </Button>
-        </div>
-      </div>
+      </form>
 
       <ul className="list-group">
         {

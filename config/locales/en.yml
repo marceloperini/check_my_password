@@ -6,3 +6,4 @@ en:
       only_downcase: have only downcase characters
       no_numbers: don't have numbers characters
       no_special_symbol: don't have special symbols (!&#$%...)
+      sequencial_characters: contain characters sequence
